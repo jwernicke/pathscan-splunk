@@ -1,0 +1,23 @@
+<view>
+  <label>PathScan</label>
+
+  <!-- top nav chrome -->
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+
+  <!-- This module renders the search box -->
+  <module name="SearchBar" layoutPanel="mainSearchControls">
+    <!-- Begin Paginator: provides for paging through the results of the search -->
+    <module name="Paginator">
+      <param name="entityName">events</param>
+
+      <module name="FieldPicker">
+        <param name="fields">start end p host1 p1 host2 p2 host3 p3</param>
+        <!-- Renders the resulting events from your search -->
+        <module name="EventsViewer">
+          <param name="reportFieldLink">report_builder_format_report</param>
+        </module>
+      </module>
+    </module> <!-- End Paginator module -->
+  </module><!-- close SearchBar module -->
+</view>
